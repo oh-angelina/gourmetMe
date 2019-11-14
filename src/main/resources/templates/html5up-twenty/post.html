@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
 	<head>
 		<title>Create Post - Gourmet Me</title>
@@ -7,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!--     <link href="/standard.css" rel="stylesheet">-->
 	</head>
 	<body class="contact is-preload">
 		<div id="page-wrapper">
@@ -40,19 +42,22 @@
 
 							<!-- Content -->
 								<div class="content">
-									<form>
+									<form action="#" th:action="@{/result}" th:object="${blogPost}" method="post">
+
+								<!-- 		    Add a hidden form field to handle the update -->
+			<input type="hidden" th:field="*{id}" />
 										<div class="row gtr-50">
 											<div class="col-6 col-12-mobile">
 												<input type="text" name="name" placeholder="Name" />
 											</div>
 											<div class="col-6 col-12-mobile">
-												<input type="text" name="author" placeholder="Author" />
+												<input type="text" th:field="*{author}" name="author" placeholder="Author" />
 											</div>
 											<div class="col-12">
 												<input type="text" name="restaurant" placeholder="Restaurant" />
 											</div>
 											<div class="col-12">
-												<input type="text" name="title" placeholder="Title" />
+												<input type="text" th:field="*{title}" name="title" placeholder="Title" />
 											</div>
 											<div class="col-12">
 												<textarea name="message" placeholder="Message" rows="7"></textarea>

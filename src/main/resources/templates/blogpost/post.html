@@ -1,49 +1,107 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<title>Create a New Blog</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<html>
+	<head>
+		<title>Create Post - Gourmet Me</title>
+		<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!--     <link href="/standard.css" rel="stylesheet">-->
+	</head>
+	<body class="contact is-preload">
+		<div id="page-wrapper">
 
-	<link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<!--     <link href="/standard.css" rel="stylesheet">
- --></head>
-<body>
-<!-- <div th:replace="fragments/fragments :: navbar"></div>
- -->	<div class="container">
-		<p>Please use the form below to submit a Blog Post:</p>
-    
-		<form action="#" th:action="@{/result}" th:object="${blogPost}" method="post">
-		    <table>
-		    
-		    
-<!-- 		    Add a hidden form field to handle the update -->
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Gourmet Me</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="restaurants.html">Restaurants</a></li>
+							<li><a href="all-posts.html">All Posts</a></li>
+							<li class="current"><a href="post.html" class="button primary">Create Post</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<span class="icon solid fa-envelope"></span>
+						<h2>Create Post</h2>
+						<p>Use the form below to let us know your favorite 
+						<br />
+						Gourmet Burger spot in Central Connecticut</p>
+					</header>
+
+					<!-- One -->
+						<section class="wrapper style4 special container medium">
+
+							<!-- Content -->
+								<div class="content">
+									<form action="#" th:action="@{/result}" th:object="${blogPost}" method="post">
+
+								<!-- 		    Add a hidden form field to handle the update -->
 			<input type="hidden" th:field="*{id}" />
-			
-			<tr>
-		        <td>Title</td>
-			    <td><input type="text" th:field="*{title}" /></td>
-			</tr>
-			<tr>
-			    <td>Author:</td>
-			    <td><input type="text" th:field="*{author}" /></td>
-			</tr>
-			<tr>
-		    	<td>Restaurant Name:</td>
-			    <td><input type="text" th:field="*{restaurant}" /></td>
-			</tr>
-			<tr>
-		    	<td>Blog Entry:</td>
-			    <td><input type="text" th:field="*{blogEntry}" /></td>
-			</tr>
-			<tr>
-			    <td><button type="submit">Submit Your Post</button></td>
-			</tr>
-		    </table>
-		</form>
-	</div>
-	
-	
-	<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-</body>
+										<div class="row gtr-50">
+											<div class="col-6 col-12-mobile">
+												<input type="text" name="name" placeholder="Name" />
+											</div>
+											<div class="col-6 col-12-mobile">
+												<input type="text" th:field="*{author}" name="author" placeholder="Author" />
+											</div>
+											<div class="col-12">
+												<input type="text" th:field="*{restaurant}" name="restaurant" placeholder="Restaurant" />
+											</div>
+											<div class="col-12">
+												<input type="text" th:field="*{title}" name="title" placeholder="Title" />
+											</div>
+											<div class="col-12">
+												<textarea name="message" th:field="*{blogEntry}" placeholder="Message" rows="7"></textarea>
+											</div>
+											<div class="col-12">
+												<ul class="buttons">
+													<li><input type="submit" class="special" value="Create Post" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</div>
+
+						</section>
+
+				</article>
+
+			<!-- Footer -->
+				<footer id="footer">
+
+					<ul class="icons">
+						<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands circle fa-google-plus-g"><span class="label">Google+</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Angelina Opoku</li>
+					</ul>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
