@@ -4,7 +4,7 @@
 		<title>All Blog Posts - Gourmet Me</title>
 		<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 		<link rel="stylesheet" href="/assets/css/main.css"/>
 		<noscript><link rel="stylesheet" href="/assets/css/noscript.css"/></noscript>
 	</head>
@@ -18,7 +18,7 @@
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li><a href="restaurants.html">Restaurants</a></li>
-							<li class="current"><a href="all-posts.html">All Posts</a></li>
+							<li class="current"><a href="all-post.html">All Posts</a></li>
 							<li><a href="post.html" class="button primary">Create Post</a></li>
 						</ul>
 					</nav>
@@ -152,3 +152,52 @@
 
 	</body>
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Blog Site</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet">
+       <link href="standard.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<h1>Welcome to Our Blog Post Site!</h1>
+<h3>Check out our blogs!</h3>
+
+	<h4>Blog Posts:</h4>
+	<div class="row">
+		<div th:each="blog:${posts}">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<p th:text="${blog.title}"/>
+				</div>
+				<div class="panel-body">
+					by: <p th:text="${blog.author}"/>					
+					<p th:text="${blog.restaurant}" />
+					<p th:text="${blog.blogEntry}" />
+				</div>
+				<div class="panel-footer">
+					 Link to Update -->
+				<!-- <a th:href="@{'/blog_posts/update/{id}'(id=${blog.id})}"> Update</a> -->
+					<!-- Link to Show  -->
+					<!--  Link to Destroy -->
+				<!-- <a th:href="@{'/blog_posts/delete/{id}'(id=${blog.id})}" onClick="if(!(confirm('Are you sure you want to delete this post?'))) return false"
+				> Delete</a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<a th:href="@{/blog_posts/post}"><button class= "btn btn-primary">Submit a New Blog Post</button></a>
+
+</div>
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</body>
+</html>                                  -->                                                                                                                                          
