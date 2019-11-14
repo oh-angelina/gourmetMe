@@ -15,16 +15,12 @@ public class BlogPost {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@Column(name="TITLE")
 	private String title;
 	
-	@Column(name="AUTHOR")
 	private String author;
 	
-	@Column(name="RESTAURANT")
 	private String restaurant; 	
 	
-	@Column(name="BLOGENTRY")
 	private String blogEntry;
 	
 	public BlogPost() {
