@@ -8,19 +8,22 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="BLOGPOST")
 public class BlogPost {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
+	@Column
 	private String title;
 	
+	@Column
 	private String author;
 	
+	@Column
 	private String restaurant; 	
 	
+	@Column
 	private String blogEntry;
 	
 	public BlogPost() {
