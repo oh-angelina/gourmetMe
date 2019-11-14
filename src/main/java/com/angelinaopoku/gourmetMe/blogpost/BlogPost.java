@@ -1,20 +1,30 @@
 package com.angelinaopoku.gourmetMe.blogpost;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="BLOGPOST")
 public class BlogPost {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
+	@Column(name="TITLE")
 	private String title;
+	
+	@Column(name="AUTHOR")
 	private String author;
-	private String restaurant; 
+	
+	@Column(name="RESTAURANT")
+	private String restaurant; 	
+	
+	@Column(name="BLOGENTRY")
 	private String blogEntry;
 	
 	public BlogPost() {
