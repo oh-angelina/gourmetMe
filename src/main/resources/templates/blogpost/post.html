@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Create a New Blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+	<link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<!--     <link href="/standard.css" rel="stylesheet">
+ --></head>
+<body>
+<!-- <div th:replace="fragments/fragments :: navbar"></div>
+ -->	<div class="container">
+		<p>Please use the form below to submit a Blog Post:</p>
+    
+		<form action="#" th:action="@{/result}" th:object="${blogPost}" method="post">
+		    <table>
+		    
+		    
+<!-- 		    Add a hidden form field to handle the update -->
+			<input type="hidden" th:field="*{id}" />
+			
+			<tr>
+		        <td>Title</td>
+			    <td><input type="text" th:field="*{title}" /></td>
+			</tr>
+			<tr>
+			    <td>Author:</td>
+			    <td><input type="text" th:field="*{author}" /></td>
+			</tr>
+			<tr>
+		    	<td>Restaurant Name:</td>
+			    <td><input type="text" th:field="*{restaurant}" /></td>
+			</tr>
+			<tr>
+		    	<td>Blog Entry:</td>
+			    <td><input type="text" th:field="*{blogEntry}" /></td>
+			</tr>
+			<tr>
+			    <td><button type="submit">Submit Your Post</button></td>
+			</tr>
+		    </table>
+		</form>
+	</div>
+	
+	
+	<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</body>
+</html>
