@@ -75,9 +75,9 @@ public class BlogPostController {
 		 return "redirect:/";
 	 }
 	 
-	 @RequestMapping("/index")
+	 @RequestMapping("/blog_post/post")
 	 public String defectDetails() {
-	     return "blog_post/index";
+	     return "blog_post/post";
 	 }
 }
     
