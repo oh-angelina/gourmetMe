@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>Blog Site</title>
+    <title>All Blog Posts- Gourmet Me</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css"/></noscript>
   </head>
   <body>
+
+          <!-- Header -->
+        <header id="header">
+          <h1 id="logo"><a href="index.html">Gourmet Me</a></h1>
+          <nav id="nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="restaurants.html">Restaurants</a></li>
+              <li class="current"><a href="all-post.html">All Posts</a></li>
+              <li><a href="post.html" class="button primary">Create Post</a></li>
+            </ul>
+          </nav>
+        </header>
+
     <h3>Blog Post Form</h3>
     <p>Thank you for your submission!</p>
     <h4>Blog Post:</h4>
@@ -12,5 +30,17 @@
     <p th:text="${author}" />
     <p th:text="${restaurant}" />
     <p th:text="${blogEntry}" />
+
+    <!-- Scripts -->
+      <script src="/assets/js/jquery.min.js"></script>
+      <script src="/assets/js/jquery.dropotron.min.js"></script>
+      <script src="/assets/js/jquery.scrolly.min.js"></script>
+      <script src="/assets/js/jquery.scrollgress.min.js"></script>
+      <script src="/assets/js/jquery.scrollex.min.js"></script>
+      <script src="/assets/js/browser.min.js"></script>
+      <script src="/assets/js/breakpoints.min.js"></script>
+      <script src="/assets/js/util.js"></script>
+      <script src="/assets/js/main.js"></script>
+
   </body>
 </html>
