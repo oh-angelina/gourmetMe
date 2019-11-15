@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+	<link rel="shortcut icon" type="image/png" href="/assets/images/favicon.ico"/>
 	<title>Blog Site</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"
-        rel="stylesheet">
-       <link href="/assets/css/main.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<link href="/assets/css/main.css" rel="stylesheet">
+	<noscript><link href="/assets/css/noscript.css" rel="stylesheet"></noscript>
 </head>
 <body>
 <div class="container">
@@ -40,8 +41,16 @@
 </div>
 	<a th:href="@{/blog_posts/post}"><button class= "btn btn-primary">Submit a New Blog Post</button></a>
 
-</div>
-	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</div>	
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.dropotron.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/jquery.scrollgress.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
 </body>
 </html>                                                                                                                                                                                     
