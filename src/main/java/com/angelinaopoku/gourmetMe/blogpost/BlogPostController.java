@@ -75,10 +75,32 @@ public class BlogPostController {
 		 return "redirect:/";
 	 }
 	 
+	 
+	 // Use this language to update all links
+	 @RequestMapping("/blog_post/index")
+	 public String homePage() {
+	     return "blog_post/index";
+	 }
+	 
 	 @RequestMapping("/blog_post/post")
-	 public String defectDetails() {
+	 public String postPage() {
 	     return "blog_post/post";
 	 }
+	 
+	 @RequestMapping("/blog_post/all-post")
+	 public String allPostsPage() {
+	     return "blog_post/all-posts";
+	 }
+	 
+	 @RequestMapping("/blog_post/restaurants")
+	 public String restaurantsPage() {
+	     return "blog_post/restaurants";
+	 }
+	 
+//	 @RequestMapping("/blog_post/post")
+//	 public String defectDetails() {
+//	     return "blog_post/post";
+//	 }
 }
     
 

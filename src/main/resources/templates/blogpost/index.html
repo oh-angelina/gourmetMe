@@ -19,7 +19,10 @@
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li><a href="/restaurants.html">Restaurants</a></li>
-							<li class="current"><a href="all-posts.html">All Posts</a></li>
+							<li class="current"><a th:href="@{blog_posts/all-posts}">All Posts</a></li>
+							
+<!-- //Use this language to update all links
+ -->
 							<li><a th:href="@{blog_posts/post}" class="button primary">Create Post</a></li>
 						</ul>
 					</nav>
