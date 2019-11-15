@@ -77,24 +77,24 @@ public class BlogPostController {
 	 
 	 
 	 // Use this language to update all links
-	 @RequestMapping("/blog_post/index")
+	 @RequestMapping("/blog_posts/index")
 	 public String homePage() {
-	     return "blog_post/index";
+	     return "blogpost/index";
 	 }
 	 
-	 @RequestMapping("/blog_post/post")
+	 @RequestMapping("/blog_posts/post")
 	 public String postPage() {
-	     return "blog_post/post";
+	     return "blogpost/post";
 	 }
 	 
-	 @RequestMapping("/blog_post/all-post")
+	 @RequestMapping("/blog_posts/all-posts")
 	 public String allPostsPage() {
-	     return "blog_post/all-posts";
+	     return "blogpost/all-posts";
 	 }
 	 
-	 @RequestMapping("/blog_post/restaurants")
+	 @RequestMapping("/blog_posts/restaurants")
 	 public String restaurantsPage() {
-	     return "blog_post/restaurants";
+	     return "blogpost/restaurants";
 	 }
 	 
 //	 @RequestMapping("/blog_post/post")
