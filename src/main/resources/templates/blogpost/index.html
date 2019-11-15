@@ -14,15 +14,12 @@
 	<!-- Header -->
 
 				<header id="header">
-					<h1 id="logo"><a th:href="@{index}">Gourmet Me</a></h1>
+					<h1 id="logo"><a th:href="@{blog_posts/index}">Gourmet Me</a></h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li class="current"><a th:href="@{blog_posts/index}">Home</a></li>
 							<li><a href="/restaurants.html">Restaurants</a></li>
-							<li class="current"><a th:href="@{blog_posts/all-posts}">All Posts</a></li>
-							
-<!-- //Use this language to update all links
- -->
+							<li ><a th:href="@{blog_posts/all-posts}">All Posts</a></li>
 							<li><a th:href="@{blog_posts/post}" class="button primary">Create Post</a></li>
 						</ul>
 					</nav>
