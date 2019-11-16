@@ -1,25 +1,27 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<title>Featured Restaurants - Gourmet Me</title>
-		<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+		<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/assets/css/main.css"/>
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css"/></noscript>
 	</head>
 	<body class="left-sidebar is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
+
+	<!-- Header -->
+
 				<header id="header">
-					<h1 id="logo"><a href="index.html">Gourmet Me</a></h1>
+					<h1 id="logo"><a th:href="@{/}">Gourmet Me</a></h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li class="current"><a href="restaurants.html">Restaurants</a></li>
-							<li><a href="all-posts.html">All Posts</a></li>
-							<li><a href="post.html" class="button primary">Create Post</a></li>
+							<li><a th:href="@{/}">Home</a></li>
+							<li class="current"><a th:href="@{/blogpost/restaurants}">Restaurants</a></li>
+							<li><a th:href="@{/blog_posts/all-posts}">All Posts</a></li>
+							<li><a th:href="@{/blog_posts/post}" class="button primary">Create Post</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -54,7 +56,7 @@
 											</section>
 
 											<section>
-												<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+												<a href="#" class="image featured"><img src="/images/pic03.jpg" alt="" /></a>
 												<header>
 													<h3>Amet Lorem Tempus</h3>
 												</header>
@@ -73,7 +75,7 @@
 									<!-- Content -->
 										<div class="content">
 											<section>
-												<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+												<a href="#" class="image featured"><img src="/images/pic02.jpg" alt="" /></a>
 												<header>
 													<h3>Dolore Amet Consequat</h3>
 												</header>
@@ -93,13 +95,14 @@
 								<div class="col-4 col-12-narrower">
 
 									<section>
+										<a th:href="@{/blogpost/restaurants}"><span class="icon solid featured fa-check"></span></a>
 										<header>
-											<h3>This is Something</h3>
+											<h3>Restaurants</h3>
 										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<p>Wanna know exactly where to go for the best grub?</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
+												<li><a th:href="@{/blogpost/restaurants}" class="button small">Learn More</a></li>
 											</ul>
 										</footer>
 									</section>
@@ -108,13 +111,14 @@
 								<div class="col-4 col-12-narrower">
 
 									<section>
+										<a th:href="@{/blog_posts/all-posts}"><span class="icon solid featured fa-check"></span></a>
 										<header>
-											<h3>Also Something</h3>
+											<h3>Reviews</h3>
 										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<p>Our reviews are made by true foodies. We'll always be honest, promise!</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
+												<li><a th:href="@{/blog_posts/all-posts}" class="button small">Learn More</a></li>
 											</ul>
 										</footer>
 									</section>
@@ -123,13 +127,14 @@
 								<div class="col-4 col-12-narrower">
 
 									<section>
+										<a th:href="@{/blog_posts/post}"><span class="icon solid featured fa-check"></span></a>
 										<header>
-											<h3>Probably Something</h3>
+											<h3>Post</h3>
 										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<p>Think you know where the best burgers really are?</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
+												<li><a th:href="@{/blog_posts/post}" class="button small">Learn More</a></li>
 											</ul>
 										</footer>
 									</section>
@@ -150,7 +155,7 @@
 					</ul>
 
 					<ul class="copyright">
-						<li>&copy; Angelina Opoku</li>
+						<li><a href="https://oh-angelina.github.io/angelina.opoku-github.io/">&copy; Angelina Opoku</a></li>
 					</ul>
 
 				</footer>
@@ -158,15 +163,15 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.dropotron.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/jquery.scrollgress.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
 
 	</body>
 </html>

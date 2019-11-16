@@ -13,15 +13,16 @@
 	<body class="contact is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
+	<!-- Header -->
+
 				<header id="header">
-					<h1 id="logo"><a href="index.html">Gourmet Me</a></h1>
+					<h1 id="logo"><a th:href="@{/}">Gourmet Me</a></h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="restaurants.html">Restaurants</a></li>
-							<li><a href="all-posts.html">All Posts</a></li>
-							<li class="current"><a href="post.html" class="button primary">Create Post</a></li>
+							<li><a th:href="@{/}">Home</a></li>
+							<li><a th:href="@{/blogpost/restaurants}">Restaurants</a></li>
+							<li><a th:href="@{/blog_posts/all-posts}">All Posts</a></li>
+							<li class="current"><a th:href="@{/blog_posts/post}" class="button primary">Create Post</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -47,11 +48,8 @@
 								<!-- 		    Add a hidden form field to handle the update -->
 			<input type="hidden" th:field="*{id}" />
 										<div class="row gtr-50">
-											<div class="col-6 col-12-mobile">
-												<input type="text" name="name" placeholder="Name" />
-											</div>
-											<div class="col-6 col-12-mobile">
-												<input type="text" th:field="*{author}" name="author" placeholder="Author" />
+											<div class="col-12">
+												<input type="text" th:field="*{author}" name="author" placeholder="Name" />
 											</div>
 											<div class="col-12">
 												<input type="text" th:field="*{restaurant}" name="restaurant" placeholder="Restaurant" />

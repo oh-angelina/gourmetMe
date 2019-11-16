@@ -6,20 +6,21 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/css/main.css"/>
-		<noscript><link rel="stylesheet" href="/assets/css/noscript.css"/></noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css"/>
 	</head>
 	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
+	<!-- Header -->
+
 				<header id="header">
 					<h1 id="logo"><a th:href="@{/}">Gourmet Me</a></h1>
 					<nav id="nav">
 						<ul>
 							<li><a th:href="@{/}">Home</a></li>
-							<li><a href="/restaurants.html">Restaurants</a></li>
-							<li class="current"><a th:href="@{blog_posts/all-posts}">All Posts</a></li>
-							<li><a th:href="@{blog_posts/post}" class="button primary">Create Post</a></li>
+							<li><a th:href="@{/blogpost/restaurants}">Restaurants</a></li>
+							<li class="current"><a th:href="@{/blog_posts/all-posts}">All Posts</a></li>
+							<li><a th:href="@{/blog_posts/post}" class="button primary">Create Post</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -37,91 +38,94 @@
 						<section class="wrapper style4 container">
 
 							<!-- Content -->
-								<div class="content">
 									<section>
-										<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="/images/pic04.jpg" alt="" /></a>
 										<header>
 											<h3>Dolore Amet Consequat</h3>
 										</header>
 										<h4>Blog Posts:</h4>
-	<div class="row">
-		<div th:each="blog:${posts}">
-		<div class="col-md-6">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<p th:text="${blog.title}"/>
-				</div>
-				<div class="panel-body">
-					by: <p th:text="${blog.author}"/>					
-					<p th:text="${blog.restaurant}" />
-					<p th:text="${blog.blogEntry}" />
-				</div>
-				<div class="panel-footer">
-					<!-- Link to Update -->
-				<a th:href="@{'/blog_posts/update/{id}'(id=${blog.id})}"> Update</a>
-					<!-- Link to Show  -->
-					<!--  Link to Destroy -->
-				<a th:href="@{'/blog_posts/delete/{id}'(id=${blog.id})}" onClick="if(!(confirm('Are you sure you want to delete this post?'))) return false"
-				> Delete</a>
-				
-									</section>
-								</div>
-<a th:href="@{/blog_posts/post}"><button class= "btn btn-primary">Submit a New Blog Post</button></a>
+										
+						<div class="row">
+							<div th:each="blog:${posts}">
+							<div class="col-6 col-12-narrower">
+									<header>
+										Title: <p th:text="${blog.title}"/>
+									</header>
+									<div>
+										by: <p th:text="${blog.author}"/>					
+										Restaurant: <p th:text="${blog.restaurant}" />
+										Post: <p th:text="${blog.blogEntry}" />
+									</div>
+									<footer>
+									<ul class="buttons">
+									<li><a th:href="@{'/blog_posts/update/{id}'(id=${blog.id})}" class="button small"> Update</a></li>
+									<li><a th:href="@{'/blog_posts/delete/{id}'(id=${blog.id})}" onClick="if(!(confirm('Are you sure you want to delete this post?'))) return false"
+									class="button small"> Delete</a></li>
+									</ul>									
+									</footer>
+							</div>
+							</div>
+								<br />
+						<a th:href="@{/blog_posts/post}"><button class= "btn btn-primary">Submit a New Blog Post</button></a>
+						</div>
 						</section>
-
+				</section>
+				
 					<!-- Two -->
 						<section class="wrapper style1 container special">
 							<div class="row">
 								<div class="col-4 col-12-narrower">
 
 									<section>
+										<a th:href="@{/blogpost/restaurants}"><span class="icon solid featured fa-check"></span></a>
 										<header>
-											<h3>This is Something</h3>
+											<h3>Restaurants</h3>
 										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<p>Wanna know exactly where to go for the best grub?</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
+												<li><a th:href="@{/blogpost/restaurants}" class="button small">Learn More</a></li>
 											</ul>
 										</footer>
 									</section>
-
-								</div>
-								<div class="col-4 col-12-narrower">
-
-									<section>
-										<header>
-											<h3>Also Something</h3>
-										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
-											</ul>
-										</footer>
-									</section>
-
-								</div>
-								<div class="col-4 col-12-narrower">
-
-									<section>
-										<header>
-											<h3>Probably Something</h3>
-										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
-											</ul>
-										</footer>
-									</section>
-
-								</div>
 							</div>
-						</section>
+							</div>
+							</section>
 
-				</article>
+								</div>
+								<div class="col-4 col-12-narrower">
 
+									<section>
+										<a th:href="@{/blog_posts/all-posts}"><span class="icon solid featured fa-check"></span></a>
+										<header>
+											<h3>Reviews</h3>
+										</header>
+										<p>Our reviews are made by true foodies. We'll always be honest, promise!</p>
+										<footer>
+											<ul class="buttons">
+												<li><a th:href="@{/blog_posts/all-posts}" class="button small">Learn More</a></li>
+											</ul>
+										</footer>
+									</section>
+
+								</div>
+								<div class="col-4 col-12-narrower">
+
+									<section>
+										<a th:href="@{/blog_posts/post}"><span class="icon solid featured fa-check"></span></a>
+										<header>
+											<h3>Post</h3>
+										</header>
+										<p>Think you know where the best burgers really are?</p>
+										<footer>
+											<ul class="buttons">
+												<li><a th:href="@{/blog_posts/post}" class="button small">Learn More</a></li>
+											</ul>
+										</footer>
+									</section>
+
+								</div>
+		</article>
 			<!-- Footer -->
 				<footer id="footer">
 
@@ -132,23 +136,22 @@
 					</ul>
 
 					<ul class="copyright">
-						<li>&copy; Angelina Opoku</li></li>
-					</ul>
+						<li><a href="https://oh-angelina.github.io/angelina.opoku-github.io/">&copy; Angelina Opoku</a></li>
+					</ul>				
 
 				</footer>
 
-		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.dropotron.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/jquery.scrollgress.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
 
 	</body>
 </html>

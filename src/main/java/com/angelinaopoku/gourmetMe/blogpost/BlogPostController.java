@@ -20,7 +20,7 @@ public class BlogPostController {
 	private BlogPost blogPost;
 	
 	 @RequestMapping("/")
-	 public String defectDetails() {
+	 public String homePage() {
 	 return "blogpost/index";
 	 }
 
@@ -80,8 +80,10 @@ public class BlogPostController {
 	 }
 	 
 	 
-	 // Use this language to update all links
-
+	 @RequestMapping("/blogpost/restaurants")
+	 public String restaurantsPage() {
+	 return "blogpost/restaurants";
+	 }
 }
     
 

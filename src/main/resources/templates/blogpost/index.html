@@ -18,9 +18,9 @@
 					<nav id="nav">
 						<ul>
 							<li class="current"><a th:href="@{/}">Home</a></li>
-							<li><a href="/restaurants.html">Restaurants</a></li>
-							<li ><a th:href="@{blog_posts/all-posts}">All Posts</a></li>
-							<li><a th:href="@{blog_posts/post}" class="button primary">Create Post</a></li>
+							<li><a th:href="@{/blogpost/restaurants}">Restaurants</a></li>
+							<li><a th:href="@{/blog_posts/all-posts}">All Posts</a></li>
+							<li><a th:href="@{/blog_posts/post}" class="button primary">Create Post</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -57,7 +57,9 @@
 				<article id="main">
 
 					<header class="special container">
-						<h2>Welcome to <strong>Gourmet Me</strong> your one stop show for gourmet burger reviews.
+						<h2>Welcome to <strong>Gourmet Me</strong> 
+						<br />
+						your one stop show for gourmet burger reviews.
 						</h2>
 						<p>Ever lost for what to eat?
 						<br /> 
@@ -65,7 +67,7 @@
 						burger places in Central Connecticut!
 						<br />
 						Browse our selection, or 
-						<a href="post.html"> add a review!</a></p>
+						<a th:href="@{/blog_posts/post}"> add a review!</a></p>
 					</header>
 
 					<!-- Two -->
@@ -74,33 +76,48 @@
 								<div class="col-4 col-12-narrower">
 
 									<section>
-										<a href="restaurants.html"><span class="icon solid featured fa-check"></span></a>
+										<a th:href="@{/blogpost/restaurants}"><span class="icon solid featured fa-check"></span></a>
 										<header>
 											<h3>Restaurants</h3>
 										</header>
 										<p>Wanna know exactly where to go for the best grub?</p>
+										<footer>
+											<ul class="buttons">
+												<li><a th:href="@{/blogpost/restaurants}" class="button small">Learn More</a></li>
+											</ul>
+										</footer>
 									</section>
 
 								</div>
 								<div class="col-4 col-12-narrower">
 
 									<section>
-										<a th:href="@{blog_posts/all-posts}"><span class="icon solid featured fa-check"></span></a>
+										<a th:href="@{/blog_posts/all-posts}"><span class="icon solid featured fa-check"></span></a>
 										<header>
 											<h3>Reviews</h3>
 										</header>
-										<p>We'll always be honest, promise!</p>
+										<p>Our reviews are made by true foodies. We'll always be honest, promise!</p>
+										<footer>
+											<ul class="buttons">
+												<li><a th:href="@{/blog_posts/all-posts}" class="button small">Learn More</a></li>
+											</ul>
+										</footer>
 									</section>
 
 								</div>
 								<div class="col-4 col-12-narrower">
 
 									<section>
-										<a th:href="@{blog_posts/post}"><span class="icon solid featured fa-check"></span></a>
+										<a th:href="@{/blog_posts/post}"><span class="icon solid featured fa-check"></span></a>
 										<header>
 											<h3>Post</h3>
 										</header>
 										<p>Think you know where the best burgers really are?</p>
+										<footer>
+											<ul class="buttons">
+												<li><a th:href="@{/blog_posts/post}" class="button small">Learn More</a></li>
+											</ul>
+										</footer>
 									</section>
 
 								</div>
@@ -118,7 +135,7 @@
 								<div class="col-6 col-12-narrower">
 
 									<section>
-										<a href="restaurants.html" class="image featured"><img src="images/fries.jpg" alt="fries" /></a>
+										<a th:href="@{/blogpost/restaurants}" class="image featured"><img src="images/fries.jpg" alt="fries" /></a>
 										<header>
 											<h3>Mickey D's</h3>
 										</header>
@@ -129,7 +146,7 @@
 								<div class="col-6 col-12-narrower">
 
 									<section>
-										<a href="restaurants.html" class="image featured"><img src="images/burger1.jpg" alt="burger" /></a>
+										<a th:href="@{/blogpost/restaurants}" class="image featured"><img src="images/burger1.jpg" alt="burger" /></a>
 										<header>
 											<h3>Wendy's</h3>
 										</header>
@@ -142,7 +159,7 @@
 								<div class="col-6 col-12-narrower">
 
 									<section>
-										<a href="restaurants.html" class="image featured"><img src="images/burger2.jpg" alt="burger" /></a>
+										<a th:href="@{/blogpost/restaurants}" class="image featured"><img src="images/burger2.jpg" alt="burger" /></a>
 										<header>
 											<h3>Burger King</h3>
 										</header>
@@ -153,11 +170,11 @@
 								<div class="col-6 col-12-narrower">
 
 									<section>
-										<a href="restaurants.html" class="image featured"><img src="images/chicken.jpg" alt="chicken sandich" /></a>
+										<a th:href="@{/blogpost/restaurants}" class="image featured"><img src="images/chicken.jpg" alt="chicken sandich" /></a>
 										<header>
 											<h3>Chic-fil-A</h3>
 										</header>
-										<p>Chicken sandwhiches count, right?</p>
+										<p>Chicken sandwiches count too!</p>
 									</section>
 
 								</div>
@@ -165,7 +182,7 @@
 
 							<footer class="major">
 								<ul class="buttons">
-									<li><a href="restaurants.html" class="button">See More</a></li>
+									<li><a th:href="@{/blogpost/restaurants}" class="button">See More</a></li>
 								</ul>
 							</footer>
 
@@ -178,12 +195,11 @@
 
 					<header>
 						<h2>Ready to Grub?</h2>
-						<p>Never worry about your next meal again</p>
 					</header>
 					<footer>
 						<ul class="buttons">
-							<li><a th:href="@{blog_posts/all-posts}" class="button primary">View Blog</a></li>
-							<li><a th:href="@{blog_posts/post}" class="button">Create Post</a></li>
+							<li><a th:href="@{/blog_posts/all-posts}" class="button primary">View Blog</a></li>
+							<li><a th:href="@{/blog_posts/post}" class="button">Create Post</a></li>
 						</ul>
 					</footer>
 
@@ -199,7 +215,7 @@
 					</ul>
 
 					<ul class="copyright">
-						<a href="https://oh-angelina.github.io/angelina.opoku-github.io/"><li>&copy; Angelina Opoku</li></a>
+						<li><a href="https://oh-angelina.github.io/angelina.opoku-github.io/">&copy; Angelina Opoku</a></li>
 					</ul>
 
 				</footer>

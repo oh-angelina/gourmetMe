@@ -10,18 +10,19 @@
   </head>
   <body>
 
-          <!-- Header -->
-        <header id="header">
-          <h1 id="logo"><a href="index.html">Gourmet Me</a></h1>
-          <nav id="nav">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="restaurants.html">Restaurants</a></li>
-              <li class="current"><a href="all-post.html">All Posts</a></li>
-              <li><a href="post.html" class="button primary">Create Post</a></li>
-            </ul>
-          </nav>
-        </header>
+	<!-- Header -->
+
+				<header id="header">
+					<h1 id="logo"><a th:href="@{/}">Gourmet Me</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a th:href="@{/}">Home</a></li>
+							<li><a th:href="@{/blogpost/restaurants}">Restaurants</a></li>
+							<li><a th:href="@{/blog_posts/all-posts}">All Posts</a></li>
+							<li><a th:href="@{/blog_posts/post}" class="button primary">Create Post</a></li>
+						</ul>
+					</nav>
+				</header>
 
     <h3>Blog Post Form</h3>
     <p>Thank you for your submission!</p>
