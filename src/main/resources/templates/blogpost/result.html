@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>All Blog Posts- Gourmet Me</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="/assets/css/main.css"/>
-    <noscript><link rel="stylesheet" href="/assets/css/noscript.css"/></noscript>
-  </head>
-  <body>
+	<head>
+		<title>All Blog Posts - Gourmet Me</title>
+		<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css"/>
+		<link rel="stylesheet" href="/assets/css/noscript.css"/>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
 
 	<!-- Header -->
 
@@ -18,19 +19,45 @@
 						<ul>
 							<li><a th:href="@{/}">Home</a></li>
 							<li><a th:href="@{/blogpost/restaurants}">Restaurants</a></li>
-							<li><a th:href="@{/blog_posts/all-posts}">All Posts</a></li>
+							<li class="current"><a th:href="@{/blog_posts/all-posts}">All Posts</a></li>
 							<li><a th:href="@{/blog_posts/post}" class="button primary">Create Post</a></li>
 						</ul>
 					</nav>
 				</header>
 
-    <h3>Blog Post Form</h3>
-    <p>Thank you for your submission!</p>
-    <h4>Blog Post:</h4>
-    <p th:text="${title}" />
-    <p th:text="${author}" />
-    <p th:text="${restaurant}" />
-    <p th:text="${blogEntry}" />
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<span class="icon solid fa-mobile-alt"></span>
+						<h2><strong>Confirmation Page</strong></h2>
+					</header>
+
+					<!-- One -->
+						<section class="wrapper style4 container">
+
+							<!-- Content -->
+									<section>
+										<a href="#" class="image featured"><img src="/images/thanks.jpg" alt="thank-you" /></a>
+										<header>
+											<h3>Thanks for your submission!</h3>
+										</header>
+		<div>
+		    <h4>Blog Post:</h4>
+		    Title: <p th:text="${title}" />
+		    Name: <p th:text="${author}" />
+		    Restaurant: <p th:text="${restaurant}" />
+		    Post: <p th:text="${blogEntry}" />
+		</div>
+    			<footer>
+					<ul class="buttons stacked">
+						<li><a th:href="@{/}" class="button fit scrolly">Return to Home</a></li>
+					</ul>
+				</footer>
+
+	</section>
+
+
 
     <!-- Scripts -->
       <script src="/assets/js/jquery.min.js"></script>
