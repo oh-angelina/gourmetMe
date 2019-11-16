@@ -18,14 +18,18 @@ public class BlogPostController {
     private BlogPostRepository blogPostRepository;
 	
 	private BlogPost blogPost;
+	
+	 @RequestMapping("/")
+	 public String defectDetails() {
+	 return "blogpost/index";
+	 }
 
-	@GetMapping("/")
+ @GetMapping("/blog_posts/all-posts")
 	public String index(BlogPost blogPost, Model model) {
 		model.addAttribute("posts", blogPostRepository.findAll());
-		return "blogpost/index";
-	}
-	
-	
+		return "blogpost/all-posts";
+		}
+ 
  @PostMapping(value = "/result")
  	public String saveBlogPost(@ModelAttribute("blogPost") BlogPost blogPost, Model model) {
 	 
@@ -77,30 +81,7 @@ public class BlogPostController {
 	 
 	 
 	 // Use this language to update all links
-	 @RequestMapping("/blog_posts/index")
-	 public String homePage() {
-	     return "blogpost/index";
-	 }
-	 
-	 @RequestMapping("/blog_posts/post")
-	 public String postPage() {
-	     return "blogpost/post";
-	 }
-	 
-	 @RequestMapping("/blog_posts/all-posts")
-	 public String allPostsPage() {
-	     return "blogpost/all-posts";
-	 }
-	 
-	 @RequestMapping("/blog_posts/restaurants")
-	 public String restaurantsPage() {
-	     return "blogpost/restaurants";
-	 }
-	 
-//	 @RequestMapping("/blog_post/post")
-//	 public String defectDetails() {
-//	     return "blog_post/post";
-//	 }
+
 }
     
 

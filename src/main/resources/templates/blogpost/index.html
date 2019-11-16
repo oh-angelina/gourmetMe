@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<link rel="shortcut icon" type="image/png" href="/assets/images/favicon.ico"/>
+	<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
 	<title>Blog Site</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
@@ -14,10 +14,10 @@
 	<!-- Header -->
 
 				<header id="header">
-					<h1 id="logo"><a th:href="@{blog_posts/index}">Gourmet Me</a></h1>
+					<h1 id="logo"><a th:href="@{/}">Gourmet Me</a></h1>
 					<nav id="nav">
 						<ul>
-							<li class="current"><a th:href="@{blog_posts/index}">Home</a></li>
+							<li class="current"><a th:href="@{/}">Home</a></li>
 							<li><a href="/restaurants.html">Restaurants</a></li>
 							<li ><a th:href="@{blog_posts/all-posts}">All Posts</a></li>
 							<li><a th:href="@{blog_posts/post}" class="button primary">Create Post</a></li>
@@ -25,47 +25,196 @@
 					</nav>
 				</header>
 				
-<h1>Welcome to My Blog Post Site!</h1>
-<h3>Check out our blogs!</h3>
+			<!-- Banner -->
+				<section id="banner">
 
-	<h4>Blog Posts:</h4>
-	<div class="row">
-		<div th:each="blog:${posts}">
-		<div class="col-md-6">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<p th:text="${blog.title}"/>
-				</div>
-				<div class="panel-body">
-					by: <p th:text="${blog.author}"/>					
-					<p th:text="${blog.restaurant}" />
-					<p th:text="${blog.blogEntry}" />
-				</div>
-				<div class="panel-footer">
-					<!-- Link to Update -->
-				<a th:href="@{'/blog_posts/update/{id}'(id=${blog.id})}"> Update</a>
-					<!-- Link to Show  -->
-					<!--  Link to Destroy -->
-				<a th:href="@{'/blog_posts/delete/{id}'(id=${blog.id})}" onClick="if(!(confirm('Are you sure you want to delete this post?'))) return false"
-				> Delete</a>
-					
-				</div>
-			</div>
+					<!--
+						".inner" is set up as an inline-block so it automatically expands
+						in both directions to fit whatever's inside it. This means it won't
+						automatically wrap lines, so be sure to use line breaks where
+						appropriate (<br />).
+					-->
+					<div class="inner">
+
+						<header>
+							<h2>Gourmet Me</h2>
+						</header>
+						<p>Greater Hartford's Gourmet Burger
+						<br />
+						Blog Spot
+						</p>
+						<footer>
+							<ul class="buttons stacked">
+								<li><a href="#main" class="button fit scrolly">Learn More</a></li>
+							</ul>
+						</footer>
+
+					</div>
+
+				</section>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<h2>Welcome to <strong>Gourmet Me</strong> your one stop show for gourmet burger reviews.
+						</h2>
+						<p>Ever lost for what to eat?
+						<br /> 
+						Don't stress, we've found all the best
+						burger places in Central Connecticut!
+						<br />
+						Browse our selection, or 
+						<a href="post.html"> add a review!</a></p>
+					</header>
+
+					<!-- Two -->
+						<section class="wrapper style1 container special">
+							<div class="row">
+								<div class="col-4 col-12-narrower">
+
+									<section>
+										<a href="restaurants.html"><span class="icon solid featured fa-check"></span></a>
+										<header>
+											<h3>Restaurants</h3>
+										</header>
+										<p>Wanna know exactly where to go for the best grub?</p>
+									</section>
+
+								</div>
+								<div class="col-4 col-12-narrower">
+
+									<section>
+										<a th:href="@{blog_posts/all-posts}"><span class="icon solid featured fa-check"></span></a>
+										<header>
+											<h3>Reviews</h3>
+										</header>
+										<p>We'll always be honest, promise!</p>
+									</section>
+
+								</div>
+								<div class="col-4 col-12-narrower">
+
+									<section>
+										<a th:href="@{blog_posts/post}"><span class="icon solid featured fa-check"></span></a>
+										<header>
+											<h3>Post</h3>
+										</header>
+										<p>Think you know where the best burgers really are?</p>
+									</section>
+
+								</div>
+							</div>
+						</section>
+
+					<!-- Three -->
+						<section class="wrapper style3 container special">
+
+							<header class="major">
+								<h2>Featured Restaurants</strong></h2>
+							</header>
+
+							<div class="row">
+								<div class="col-6 col-12-narrower">
+
+									<section>
+										<a href="restaurants.html" class="image featured"><img src="images/fries.jpg" alt="fries" /></a>
+										<header>
+											<h3>Mickey D's</h3>
+										</header>
+										<p>Ba dah ba ba bah...</p>
+									</section>
+
+								</div>
+								<div class="col-6 col-12-narrower">
+
+									<section>
+										<a href="restaurants.html" class="image featured"><img src="images/burger1.jpg" alt="burger" /></a>
+										<header>
+											<h3>Wendy's</h3>
+										</header>
+										<p>Fresh, never frozen, am I right?</p>
+									</section>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-6 col-12-narrower">
+
+									<section>
+										<a href="restaurants.html" class="image featured"><img src="images/burger2.jpg" alt="burger" /></a>
+										<header>
+											<h3>Burger King</h3>
+										</header>
+										<p>His majesty has arrived.</p>
+									</section>
+
+								</div>
+								<div class="col-6 col-12-narrower">
+
+									<section>
+										<a href="restaurants.html" class="image featured"><img src="images/chicken.jpg" alt="chicken sandich" /></a>
+										<header>
+											<h3>Chic-fil-A</h3>
+										</header>
+										<p>Chicken sandwhiches count, right?</p>
+									</section>
+
+								</div>
+							</div>
+
+							<footer class="major">
+								<ul class="buttons">
+									<li><a href="restaurants.html" class="button">See More</a></li>
+								</ul>
+							</footer>
+
+						</section>
+
+				</article>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<header>
+						<h2>Ready to Grub?</h2>
+						<p>Never worry about your next meal again</p>
+					</header>
+					<footer>
+						<ul class="buttons">
+							<li><a th:href="@{blog_posts/all-posts}" class="button primary">View Blog</a></li>
+							<li><a th:href="@{blog_posts/post}" class="button">Create Post</a></li>
+						</ul>
+					</footer>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+
+					<ul class="icons">
+						<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands circle fa-google-plus-g"><span class="label">Google+</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<a href="https://oh-angelina.github.io/angelina.opoku-github.io/"><li>&copy; Angelina Opoku</li></a>
+					</ul>
+
+				</footer>
+
 		</div>
-	</div>
-</div>
-	<a th:href="@{/blog_posts/post}"><button class= "btn btn-primary">Submit a New Blog Post</button></a>
 
-</div>	
 		<!-- Scripts -->
 			<script src="/assets/js/jquery.min.js"></script>
 			<script src="/assets/js/jquery.dropotron.min.js"></script>
 			<script src="/assets/js/jquery.scrolly.min.js"></script>
-			<script src="/assets/js/jquery.scrollgress.min.js"></script>
 			<script src="/assets/js/jquery.scrollex.min.js"></script>
 			<script src="/assets/js/browser.min.js"></script>
 			<script src="/assets/js/breakpoints.min.js"></script>
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
-</body>
-</html>                                                                                                                                                                                     
+
+	</body>
+</html>                                                                                                                                                                          
