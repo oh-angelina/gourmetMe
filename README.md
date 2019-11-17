@@ -1,6 +1,9 @@
 # Gourmet Me
 The hotest gourmet burgers in Central CT
 
+![Screenshot](https://raw.githubusercontent.com/oh-angelina/gourmetMe/master/src/main/resources/static/images/Screenshot.png)
+
+
 ### About
 A restaurant review web application built on MVC architecture. Users can add, edit, and delete anonymous posts to the site. Login capabilities in development.  
 
